@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <link rel="stylesheet" href="style.css">
+      
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Dice Roller</h1>
+       
+        <img id="diceImage" src="default.png" alt="Dice Image"><br>
+        <button id="rollButton">Roll Dice</button>
+        <div id="result"></div>
+       
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const rollButton = document.getElementById('rollButton');
+            const resultDisplay = document.getElementById('result');
+            const diceImage = document.getElementById('diceImage');
+            const diceImages = [
+                'dice1.png',
+                'dice2.png',
+                'dice3.png',
+                'dice4.png',
+                'dice5.png',
+                'dice6.png'
+            ];
+
+            rollButton.addEventListener('click', () => {
+                
+                const diceValue = Math.floor(Math.random() * 6) + 1;
+
+               
+
+                
+                diceImage.src = diceImages[diceValue - 1];
+            });
+        });
+    </script>
+</body>
+</html>
